@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+
+:root {
+    --Primeira-Cor: #222;
+    --Segunda-Cor: #fff;
+
+    --body-color: #fefefe;
+    --body-color2: #eee;
+
+    --font-color:#dadcdd;
+    --font-color2:#777;
+
+    --hover-color: rgba(18, 117, 231, 0.733);
+    --hover-color2: #010101;
+
+    --transparent-color: rgba(255,255,255,.25);
+    --transparent-color2: rgba(255,255,255,.1);
+
+    --border-color:#ccc;
+
+    --box-shadow: 0 5px 25px rgba(0,0,0,.35);
+
+    --bar-color:#f1f1f1;
+    --bar-color-2:#555;
+    --bar-color-3:#444;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playpen Sans', sans-serif;
+}
+
+
+body{
+    position: relative;
+    min-height: 100vh;
+    background: var(---body-color);
+}
+
+.Grupo-menu {
+    content-visibility: hidden;
+}
+.Grupo-menu.active {
+    content-visibility: visible;
+}
+
+
+.menu-btn {
+    color: var(--Segunda-Cor);
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.menu-btn:hover {
+    color: var( --hover-color2);
+
+}
+.menu-btn i {
+    margin-left: 5px;
+}
+
+.Janelas {
+    position: absolute;
+    background: var( --transparent-color);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.Janelas.active {
+    opacity: 1;
+}
+
+.Janela-menu {
+    position: relative;
+    background: var(--Segunda-Cor);
+    box-shadow: var(--box-shadow);
+    width: 0;
+    height: 0;
+    min-height: 0;
+    opacity: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50px;
+}
+
+.Janelas.active .Janela-menu {
+    width: 530px;
+    height: fit-content;
+    min-height: 500px;
+    opacity: 1;
+    transition: opacity .3s , width .8s, height .8s, min-height .8s;
+}
+.menu-opcao {
+    content-visibility: hidden ;
+}
+
+.menu-opcao.active{
+    content-visibility: visible;
+}
+.fechar-menu {
+    position: absolute;
+    top: -40px;
+    right: 50px;
+    color: var(--Primeira-Cor);
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.fechar-menu :hover {
+    color: var(--hover-color);
+}
+.fechar-menu i {
+    font-size: 1.3em;
+}
+
+
+.fechar-menu span {
+    font-size: 1.1em;
+}
+
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.menu-item a {
+    color: var(--Primeira-Cor);
+    font-size: 1.05em;
+    font-weight: 400;
+    text-decoration: none;
+    padding:  15px;
+    transition: .3s ease;
+}
+
+.menu-item button {
+    color: #fff;
+    background: transparent;
+    width: 50%;
+    border:  2px solid #222;
+    border-radius:  20px;
+    height: 50px;
+}
+
+.menu-item a:hover {
+    color: var(--hover-color2);
+    transform: scale(1.05);
+}
+.menu-item a i {
+    font-size: 1.3em;
+    margin-right: 5px;
+}
+
+@media (max-width: 1218px ) {
+    header {
+       padding:  22px 4%;
+    }
+    
+    .icons {
+       padding: 0 4%;
+    }
+    .scroll {
+       right: 4%;
+    }
+ }
+ 
+ @media (max-width: 1066px) {
+    .pedido__principal {
+       flex-direction: column; 
+       column-gap: 20%;
+        align-items: flex-start;
+    }
+ }
+    
+ 
+ @media (max-width: 1194px ) {
+   :root {
+    --big-font: 5.5rem;
+    --p--font: 15px;
+   }
+ }
+ 
+ 
+ @media (max-width: 1059px ) {
+   :root {
+    --big-font: 4.6rem;
+   }
+   section {
+    padding:  0 25%;
+ }
+ .imagem__pedido img {
+    width: 100%; 
+    height: auto; 
+    min-width: 60%;
+    min-height: auto; 
+ }
+ 
+ 
+   .price {
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    
+   }
+ 
+   .btn{
+    padding: 10px 23px;
+    column-gap: 26%;
+   }
+ }
+ 
+ @media (max-width: 1035px ) {
+   #pedido__principal {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 50px;
+ 
+   }
+ }
